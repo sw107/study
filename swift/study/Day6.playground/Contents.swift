@@ -4,102 +4,102 @@ import UIKit
  struct mutating
  */
 
-//class FriendClass{
-//    var name: String
-//
+class FriendClass{
+    var name: String
+
+    init(_ name: String){
+        self.name = name
+    }
+
+    func changeName(_ newName: String){
+        self.name = "Hello " + newName
+    }
+    
+
+}
+
+var myFriend = FriendClass("John")
+myFriend.changeName("Alice")
+
+print(myFriend.name)
+
+
+struct FriendStruct {
+    var name: String
+
+//    struct는 생성자가 없어도 됨
 //    init(_ name: String){
 //        self.name = name
 //    }
-//
-//    func changeName(_ newName: String){
-//        self.name = "Hello " + newName
-//    }
-//    
-//
-//}
-//
-//var myFriend = FriendClass("John")
-//myFriend.changeName("Alice")
-//
-//print(myFriend.name)
-//
-//
-//struct FriendStruct {
-//    var name: String
-//
-////    struct는 생성자가 없어도 됨
-////    init(_ name: String){
-////        self.name = name
-////    }
-//    func changeName(newName: String){
-////        self.name = newName               오류발생
-//        print("newName: \(newName)")
-//    }
-//    
-//    // sturct 안에서 맴버변수를 변경하는 메소드를 만들 때는 mutating를 붙여야함
-//    mutating func changeName2(newName: String){
-//        self.name = newName
-//    }
-//    
-//}
-//
-//var myFriend2 = FriendStruct(name: "John")
-//
-//myFriend2.changeName(newName: "David")
+    func changeName(newName: String){
+//        self.name = newName               오류발생
+        print("newName: \(newName)")
+    }
+    
+    // sturct 안에서 맴버변수를 변경하는 메소드를 만들 때는 mutating를 붙여야함
+    mutating func changeName2(newName: String){
+        self.name = newName
+    }
+    
+}
+
+var myFriend2 = FriendStruct(name: "John")
+
+myFriend2.changeName(newName: "David")
 
 
 /*
  set - 집합, 배열과 비슷하지만 중복된 데이터들이 없음
  */
 
-//var myNumberSet: Set<Int> = Set<Int>()
-//
-//myNumberSet.insert(1)
-//myNumberSet.insert(2)
-//myNumberSet.insert(2)
-//myNumberSet.insert(3)
-//myNumberSet.insert(3)
-//myNumberSet.insert(3)
-//
-//myNumberSet.count
-//myNumberSet
-//
-//for item in myNumberSet{
-//    print("item: \(item)")
-//}
-//
-//var myFriends: Set<String> = ["철수", "영희", "수지"]
-//var myFriends2: [String] = ["철수", "영희", "수지"]
-//
-//myFriends.contains("맹구")
-//myFriends2.contains("맹구")
-//
-//if let indexToRemove = myFriends.firstIndex(of: "영희"){
-//    print("indexToRemove: \(indexToRemove)")
-//    myFriends.remove(at: indexToRemove)
-//}
-//
-//myFriends
+var myNumberSet: Set<Int> = Set<Int>()
+
+myNumberSet.insert(1)
+myNumberSet.insert(2)
+myNumberSet.insert(2)
+myNumberSet.insert(3)
+myNumberSet.insert(3)
+myNumberSet.insert(3)
+
+myNumberSet.count
+myNumberSet
+
+for item in myNumberSet{
+    print("item: \(item)")
+}
+
+var myFriends: Set<String> = ["철수", "영희", "수지"]
+var myFriends2: [String] = ["철수", "영희", "수지"]
+
+myFriends.contains("맹구")
+myFriends2.contains("맹구")
+
+if let indexToRemove = myFriends.firstIndex(of: "영희"){
+    print("indexToRemove: \(indexToRemove)")
+    myFriends.remove(at: indexToRemove)
+}
+
+myFriends
 
 
 /*
  stuct 메소드
  */
 
-//struct Friend{
-//    
-//    var age: Int
-//    var name: String
-//    
-//    func sayHello() -> String {
-//        print("sayHello() called")
-//        return "저는 \(age)살 \(name)입니다."
-//    }
-//}
-//
-//var myFriend2 = Friend(age: 5, name: "짱구")
-//
-//myFriend2.sayHello()
+struct Friend{
+    
+    var age: Int
+    var name: String
+    
+    func sayHello() -> String {
+        print("sayHello() called")
+        return "저는 \(age)살 \(name)입니다."
+    }
+}
+
+var myFriend3 = Friend(age: 5, name: "짱구")
+
+myFriend3.sayHello()
 
 
 /*
@@ -133,9 +133,9 @@ struct Friend2: Naming {
     }
 }
 
-var myFriend3 = Friend2(name: "맹구")
+var myFriend4 = Friend2(name: "맹구")
 
-myFriend3.getName()
+myFriend4.getName()
 
 struct Friend3: UserNotifiable {
     var name: String
