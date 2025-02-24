@@ -124,7 +124,7 @@ let oddNumbers: [Int] = numbers.filter { aNumber in
     return aNumber % 2 != 0
 }
 
-var myArray = [3, 4, 62, 66, 21, 345, 54, 1, 356, 7]
+var myArray = [3, 4, 62, 66, 20, 345, 54, 1, 356, 7]
 
 var ascendingArray = myArray.sorted()                     // 정렬해서 반환, 오름차순
 
