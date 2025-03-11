@@ -6,20 +6,20 @@ import UIKit
 
 let jsonFromServer = """
 {
-    "nick_name": "sw"
-    "job": "student"
-    "user_name": "sw"
+    "nick_name": "sw",
+    "job": "student",
+    "user_name": "sw",
 }
 """
 
 // decode = 제이슨을 클래스, 스트럭트로 바꾸기
-// encode = 제이슨으로 만들기
+// encode = 클래스나 스트럭트를 제이슨으로 만들기
 
 struct User: Decodable{
     
     var nickname: String?
-    var job: String
-    var myUserName: String
+    var job: String?
+    var myUserName: String?
     
     enum CodingKeys: String, CodingKey {
         case nickname = "nick_name"
