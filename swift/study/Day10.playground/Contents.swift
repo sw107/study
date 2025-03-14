@@ -12,10 +12,10 @@ let jsonFromServer = """
 }
 """
 
-// decode = 제이슨을 클래스, 스트럭트로 바꾸기
-// encode = 클래스나 스트럭트를 제이슨으로 만들기
+// decode = 제이슨을 클래스, 스트럭트로 바꾸기 / 서버로부터 응답 받기
+// encode = 클래스나 스트럭트를 제이슨으로 만들기 / 서버로 데이터 보내기
 
-struct User: Decodable{
+struct User: Encodable & Decodable{
     
     var nickname: String?
     var job: String?
@@ -23,7 +23,7 @@ struct User: Decodable{
     
     enum CodingKeys: String, CodingKey {
         case nickname = "nick_name"
-        case job
+        case job = "job"
         case myUserName = "user_name"
     }
     
@@ -41,6 +41,11 @@ struct User: Decodable{
             return nil
         }
     }
+    
 }
 
 let user = User.getUserFromJson(jsonFromServer)
+
+
+
+
