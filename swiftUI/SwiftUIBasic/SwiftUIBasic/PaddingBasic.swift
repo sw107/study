@@ -1,5 +1,5 @@
 //
-//  PadingBasic.swift
+//  PaddingBasic.swift
 //  SwiftUIBasic
 //
 //  Created by 최승원 on 5/6/25.
